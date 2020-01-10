@@ -1,0 +1,19 @@
+{
+
+    "params" :{
+        "local_server" :"True",
+        "local_url" : "mysql://root:@localhost/flaskblog",
+        "prod_url" :"mysql://root:@localhost/flaskblog",
+        "fb_url" :"https://facebook.com/flaskblog",
+        "tw_url" :"https://twitter.com/flaskblog",
+        "gh_url" : "https://github.com/flaskblog",
+        "gmail-username" :"rohitprotobit@gmail.com",
+        "gmail-password" :"vikaspalalethe@123",
+        "about_text" : "Hi i am machine learning enthustiant and web developer we have the codercommunity",
+        "no_of_posts" : 2,
+        "admin_username" : "admin", 
+        "admin_password" : "admin",
+        "file_uploader" : "C:\\Users\\Rohit-PC\\Desktop\\flask\\static\\img"
+
+    }
+}

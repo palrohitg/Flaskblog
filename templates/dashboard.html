@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url(  {{ url_for('static', filename ='img/home-bg.jpg') }}     )">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Admin Panel</h1>
+            <span class="subheading">Manage your posts and change your data</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- fetch using the jinja for loop -->
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <h4>basic Action</h4> <br>
+        <a href="/Edit/0" class="btn btn-primary"> <button>Add new post</button> </a>
+         <hr>
+         <a href="/logout" class="btn btn-primary"> <button>Logout</button> </a>
+         <hr>
+       <h4>file uploader</h4> 
+       <form action="/uploader" method="post" enctype="multipart/form-data">
+         <input type="file" name="file_uploader" >
+          <input type="submit"  name="uploader" id="uploader" value="Uploader">
+       </form>
+       <hr>
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">SrNo</th>
+                <th scope="col">Title</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+      
+                {% for posts in posts%}
+              <tr>
+                <td>{{ posts['id']}}</td>
+                <td>{{ posts['title']}}</td>
+                 <td><a href="/Edit/{{ posts.id}}" class="btn btn-primary"><button>Edit</button></a></td>
+                <td><button class="btn btn-primary">Delete</button></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+
+    
+{% endblock %}
